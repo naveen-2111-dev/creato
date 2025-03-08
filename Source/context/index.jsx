@@ -8,6 +8,7 @@ const AppContext = createContext();
 
 export function Myapp(props) {
   const [address, setAddress] = createSignal(null);
+  const [user, setUser] = createSignal(null);
   const [Signer, setSigner] = createSignal(null);
   const [Instance, setInstance] = createSignal(null);
   const [Reciept, setReciept] = createSignal(null);
@@ -28,7 +29,8 @@ export function Myapp(props) {
       setSigner(signer);
       const user =
         AddressOfSigner.slice(0, 5) + "..." + AddressOfSigner.slice(5, 9);
-      setAddress(user);
+      setAddress(AddressOfSigner);
+      setUser(user);
 
       const contract = new ethers.Contract(
         contractDetails.address,
@@ -75,7 +77,9 @@ export function Myapp(props) {
   };
 
   return (
-    <AppContext.Provider value={{ address, Connect, Upload, MintNft, Reciept }}>
+    <AppContext.Provider
+      value={{ address, Connect, Upload, MintNft, Reciept, user }}
+    >
       {props.children}
     </AppContext.Provider>
   );

@@ -3,7 +3,7 @@ import { UseMyContext } from "../context";
 
 function App() {
   const [Cid, setCid] = createSignal(null);
-  const { Connect, address, Upload, MintNft, Reciept } = UseMyContext();
+  const { Connect, user, Upload, MintNft, Reciept } = UseMyContext();
 
   createEffect(() => {
     Connect();
@@ -71,7 +71,7 @@ function App() {
           onClick={Connect}
           class="mt-6 cursor-pointer w-full px-8 py-4 text-lg bg-blue-600 hover:bg-blue-500 rounded-lg text-white font-semibold"
         >
-          {address() ? address() : "Connect Wallet"}
+          {user() ? user() : "Connect Wallet"}
         </button>
 
         {Cid() && (
