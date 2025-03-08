@@ -1,0 +1,17 @@
+{
+  "name": "nftcreator",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "type": "module",
+  "author": "",
+  "scripts": {
+    "deploy": "node ./scripts/deploy.js",
+    "compile": "npx solcjs --bin --abi --include-path node_modules/ --base-path . -o artifacts ./contracts/NFT.sol"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.2.0",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.5"
+  }
+}
