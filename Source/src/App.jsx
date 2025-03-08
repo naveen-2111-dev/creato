@@ -44,7 +44,7 @@ function App() {
   return (
     <div class="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-10">
       <div class="w-full max-w-lg bg-gray-800 p-8 rounded-lg shadow-2xl">
-        <div class="border-4 border-dashed border-gray-500 p-40 rounded-lg flex flex-col items-center justify-center cursor-pointer mb-6">
+        <div class="border-4 border-dashed border-gray-500 w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 flex flex-col items-center justify-center cursor-pointer rounded-lg">
           <input
             type="file"
             accept="image/*"
